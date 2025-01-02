@@ -13,6 +13,12 @@ class _DashboardPageState extends State<DashboardPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Dashboard"),
+        actions: [
+          IconButton(
+            onPressed: (){}, 
+            icon: Icon(Icons.logout)
+          )
+        ],
       ),
       body: Center(
         child: Text("Dashboard"),
