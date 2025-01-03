@@ -5,6 +5,7 @@ import 'package:mobile_pos_app/data/datasources/auth_local_datasource.dart';
 import 'package:mobile_pos_app/data/datasources/auth_remote_datasource.dart';
 import 'package:mobile_pos_app/presentation/auth/bloc/login/login_bloc.dart';
 import 'package:mobile_pos_app/presentation/auth/page/login_page.dart';
+import 'package:mobile_pos_app/presentation/home/bloc/logout/logout_bloc.dart';
 import 'package:mobile_pos_app/presentation/home/page/dashboard_page.dart';
 
 import 'core/constants/colors.dart';
@@ -19,8 +20,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => LoginBloc(AuthRemoteDatasource()),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => LoginBloc(AuthRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => LogoutBloc(AuthRemoteDatasource()),
+        ),
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
@@ -43,15 +51,14 @@ class MyApp extends StatelessWidget {
           ),
         ),
         home: FutureBuilder<bool>(
-          future: AuthLocalDatasource().isAuth(),
-          builder: (context, snapshot) {
-            if(snapshot.hasData && snapshot.data == true){
-              return const DashboardPage();
-            }else{
-              return const LoginPage();
-            }
-          }
-        ),
+            future: AuthLocalDatasource().isAuth(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData && snapshot.data == true) {
+                return const DashboardPage();
+              } else {
+                return const LoginPage();
+              }
+            }),
       ),
     );
   }
