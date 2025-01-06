@@ -14,6 +14,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
   ProductBloc(
     this._productRemoteDatasource
   ) : super(_Initial()) {
+    
     on<_Fetch>((event, emit)async{
       emit(const ProductState.loading());
       final response = await _productRemoteDatasource.getProduct();
@@ -24,6 +25,16 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
           emit(ProductState.success(r.data));
         }
       );
+    });
+
+    on<_FetchByCategory>((event, emit)async{
+      emit(const ProductState.loading());
+      final newProduct = event.category == "all"
+      ? product
+      : product.where((element) => element.category == event.category)
+      .toList();
+
+      emit(ProductState.success(newProduct));
     });
   }
 }
