@@ -22,36 +22,36 @@ class _HomePageState extends State<HomePage> {
   final indexValue = ValueNotifier(0);
 
   List<ProductModel> searchResults = [];
-  final List<ProductModel> products = [
-    ProductModel(
-      image: Assets.images.f1.path,
-      name: 'Nutty Latte',
-      category: ProductCategory.drink,
-      price: 39000,
-      stock: 10,
-    ),
-    ProductModel(
-      image: Assets.images.f2.path,
-      name: 'Iced Latte',
-      category: ProductCategory.drink,
-      price: 24000,
-      stock: 10,
-    ),
-    ProductModel(
-      image: Assets.images.f3.path,
-      name: 'Iced Mocha',
-      category: ProductCategory.drink,
-      price: 33000,
-      stock: 10,
-    ),
-    ProductModel(
-      image: Assets.images.f4.path,
-      name: 'Hot Mocha',
-      category: ProductCategory.drink,
-      price: 33000,
-      stock: 10,
-    ),
-  ];
+  // final List<ProductModel> products = [
+  //   ProductModel(
+  //     image: Assets.images.f1.path,
+  //     name: 'Nutty Latte',
+  //     category: ProductCategory.drink,
+  //     price: 39000,
+  //     stock: 10,
+  //   ),
+  //   ProductModel(
+  //     image: Assets.images.f2.path,
+  //     name: 'Iced Latte',
+  //     category: ProductCategory.drink,
+  //     price: 24000,
+  //     stock: 10,
+  //   ),
+  //   ProductModel(
+  //     image: Assets.images.f3.path,
+  //     name: 'Iced Mocha',
+  //     category: ProductCategory.drink,
+  //     price: 33000,
+  //     stock: 10,
+  //   ),
+  //   ProductModel(
+  //     image: Assets.images.f4.path,
+  //     name: 'Hot Mocha',
+  //     category: ProductCategory.drink,
+  //     price: 33000,
+  //     stock: 10,
+  //   ),
+  // ];
 
    @override
   void initState() {

@@ -19,8 +19,8 @@ class ProductRemoteDatasource {
       }
     );
     if(response.statusCode == 200){
-      final responseData = json.decode(response.body);
-      return right(ProductResponseModel.fromRawJson(responseData));
+
+      return right(ProductResponseModel.fromRawJson(response.body));
     }else{
       return left(response.body);
     }
