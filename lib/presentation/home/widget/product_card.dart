@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_pos_app/core/constants/variables.dart';
 import 'package:mobile_pos_app/core/extensions/int_ext.dart';
 import 'package:mobile_pos_app/data/models/response/product_response_model.dart';
 import 'package:mobile_pos_app/presentation/home/model/product_model.dart';
@@ -41,8 +42,10 @@ class ProductCard extends StatelessWidget {
             ),
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(50.0)),
-              child: Image.asset(
-                data.image,
+              child: data.image == ""
+              ? SizedBox()
+              : Image.network(
+                '${Variables.imageBaseUrl}${data.image}',
                 width: 68,
                 height: 68,
                 fit: BoxFit.cover,

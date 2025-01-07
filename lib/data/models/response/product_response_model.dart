@@ -59,11 +59,11 @@ class Product {
     factory Product.fromJson(Map<String, dynamic> json) => Product(
         id: json["id"],
         name: json["name"],
-        description: json["description"],
+        description: json["description"] ?? "",
         price: json["price"],
         stock: json["stock"],
         category: json["category"],
-        image: json["image"],
+        image: json["image"] ?? "",
         createdAt: DateTime.parse(json["created_at"]),
         updatedAt: DateTime.parse(json["updated_at"]),
     );

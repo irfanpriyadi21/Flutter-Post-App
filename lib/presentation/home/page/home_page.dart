@@ -151,11 +151,13 @@ class _HomePageState extends State<HomePage> {
                     return const SizedBox();
                   },loading: () => Center(
                     child: CircularProgressIndicator(),
-                  ), error: (message){
+                  ),error: (message){
                     return Center(
                       child: Text(message),
                     );
                   }, success: (product){
+                    if(product.isEmpty)
+                    return const ProductEmpty();
                     return GridView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
