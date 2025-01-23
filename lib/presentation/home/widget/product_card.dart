@@ -1,11 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_pos_app/core/constants/variables.dart';
 import 'package:mobile_pos_app/core/extensions/int_ext.dart';
 import 'package:mobile_pos_app/data/models/response/product_response_model.dart';
 import 'package:mobile_pos_app/presentation/home/model/product_model.dart';
-
-
-
 import '../../../core/components/spaces.dart';
 import '../../../core/constants/colors.dart';
 
@@ -30,7 +28,8 @@ class ProductCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(19),
         ),
       ),
-      child: Column(
+      child: Flexible(
+        child:  Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
@@ -41,15 +40,18 @@ class ProductCard extends StatelessWidget {
               color: AppColors.disabled.withOpacity(0.4),
             ),
             child: ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(50.0)),
-              child: data.image == ""
-              ? SizedBox()
-              : Image.network(
-                '${Variables.imageBaseUrl}${data.image}',
-                width: 68,
-                height: 68,
-                fit: BoxFit.cover,
+              borderRadius: const BorderRadius.all(Radius.circular(40.0)),
+              child: CachedNetworkImage(
+                imageUrl: '${Variables.imageBaseUrl}${data.image}',
+                 imageBuilder: (context, imageProvider) => CircleAvatar(
+                  radius: 40,
+                  backgroundImage: imageProvider,
+                ),
+                progressIndicatorBuilder: (context, url, downloadProgress) => 
+                        CircularProgressIndicator(value: downloadProgress.progress),
+                errorWidget: (context, url, error) => Icon(Icons.food_bank_outlined, size: 80,),
               ),
+            
             ),
           ),
           const Spacer(),
@@ -100,6 +102,6 @@ class ProductCard extends StatelessWidget {
           ),
         ],
       ),
-    );
+      )    );
   }
 }

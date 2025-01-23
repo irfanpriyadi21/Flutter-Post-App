@@ -43,6 +43,7 @@ dependencies:
   print_bluetooth_thermal: ^1.1.1
   qr_code_scanner: ^1.0.1
   shared_preferences: ^2.3.3
+  cached_network_image: ^3.4.1
 
 dev_dependencies:
   freezed: ^2.5.7

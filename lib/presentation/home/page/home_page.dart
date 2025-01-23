@@ -62,6 +62,7 @@ class _HomePageState extends State<HomePage> {
 
   void onCategoryTap(int index) {
     searchController.clear();
+    indexValue.value = index;
     String category = "all";
     switch (index) {
       case 0:
