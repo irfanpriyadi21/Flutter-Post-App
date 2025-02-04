@@ -28,8 +28,7 @@ class ProductCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(19),
         ),
       ),
-      child: Flexible(
-        child:  Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
@@ -102,6 +101,6 @@ class ProductCard extends StatelessWidget {
           ),
         ],
       ),
-      )    );
+      );
   }
 }
