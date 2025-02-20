@@ -27,9 +27,9 @@ class ProductLocalDatasource {
             name TEXT,
             description TEXT,
             price INTEGER,
-            image TEXT,
+            stock INTEGER,
             category TEXT,
-            createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+            image TEXT,
           )
           ''');
   }
@@ -48,7 +48,7 @@ class ProductLocalDatasource {
   }
 
   //insert data product from list product
-  Future<void> insertProduct(List<Product> products)async{
+  Future<void> insertAllProduct(List<Product> products)async{
     final db = await instance.database;
     for(var product in products){
       await db.insert(tableProducts, product.toJson());

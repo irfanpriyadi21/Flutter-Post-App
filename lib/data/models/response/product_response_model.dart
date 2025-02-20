@@ -69,15 +69,12 @@ class Product {
     );
 
     Map<String, dynamic> toJson() => {
-        "id": id,
         "name": name,
         "description": description,
         "price": price,
         "stock": stock,
         "category": category,
         "image": image,
-        "created_at": createdAt.toIso8601String(),
-        "updated_at": updatedAt.toIso8601String(),
     };
 }
 
