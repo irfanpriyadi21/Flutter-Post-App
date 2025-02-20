@@ -15,23 +15,22 @@ class ProductLocalDatasource {
 
     return await openDatabase(
       path,
-      version: 1,
+      version: 5,
       onCreate: _createDB,
     );
   }
 
   Future<void> _createDB(Database db, int version)async{
-    await db.execute( '''
-          CREATE TABLE $tableProducts (
-            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-            name TEXT,
-            description TEXT,
-            price INTEGER,
-            stock INTEGER,
-            category TEXT,
-            image TEXT,
-          )
-          ''');
+          await db.execute(
+            "CREATE TABLE $tableProducts("
+            "id INTEGER PRIMARY KEY, "
+            "name TEXT, "
+            "description TEXT, "
+            "price INTEGER, " // <- Fixed the error
+            "stock INTEGER, "
+            "category TEXT, "
+            "image TEXT)"
+          );
   }
 
   Future<Database> get database async{

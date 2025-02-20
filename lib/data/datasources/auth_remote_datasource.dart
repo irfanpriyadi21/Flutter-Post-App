@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dartz/dartz.dart';
 import 'package:http/http.dart' as http;
 import 'package:mobile_pos_app/core/constants/variables.dart';
@@ -15,7 +17,8 @@ class AuthRemoteDatasource {
         'password' : password
       }
     );
-    if(response.statusCode == 200){
+     final responseData = json.decode(response.body);
+    if(responseData['code'] == 200){
       return right(AuthResponseModel.fromRawJson(response.body));
     }else{
       return left(response.body);

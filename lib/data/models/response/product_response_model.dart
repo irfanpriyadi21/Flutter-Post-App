@@ -72,7 +72,7 @@ class Product {
         "name": name,
         "description": description,
         "price": price,
-        "stock": stock,
+        "stock": stock ?? 0,
         "category": category,
         "image": image,
     };
