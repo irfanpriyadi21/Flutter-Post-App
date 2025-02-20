@@ -37,8 +37,8 @@ class Product {
     final int stock;
     final String category;
     final String image;
-    final DateTime createdAt;
-    final DateTime updatedAt;
+    final String createdAt;
+    final String updatedAt;
 
     Product({
         required this.id,
@@ -64,8 +64,8 @@ class Product {
         stock: json["stock"],
         category: json["category"],
         image: json["image"] ?? "",
-        createdAt: DateTime.parse(json["created_at"]),
-        updatedAt: DateTime.parse(json["updated_at"]),
+        createdAt: json["created_at"],
+        updatedAt: json["updated_at"],
     );
 
     Map<String, dynamic> toJson() => {
@@ -75,6 +75,9 @@ class Product {
         "stock": stock ?? 0,
         "category": category,
         "image": image,
+        "createdAt" : createdAt,
+        "updatedAt" : updatedAt
+
     };
 }
 

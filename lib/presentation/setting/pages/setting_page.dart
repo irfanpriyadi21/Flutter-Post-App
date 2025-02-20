@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mobile_pos_app/core/constants/colors.dart';
 import 'package:mobile_pos_app/data/datasources/auth_local_datasource.dart';
 import 'package:mobile_pos_app/data/datasources/product_local_datasource.dart';
 import 'package:mobile_pos_app/presentation/auth/page/login_page.dart';
@@ -31,7 +32,10 @@ class _SettingPageState extends State<SettingPage> {
                  await ProductLocalDatasource.instance.removeAllProduct(); 
                  await ProductLocalDatasource.instance.insertAllProduct(_.product.toList());
                  ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text("Sync Data Success"))
+                  const SnackBar(
+                    backgroundColor: AppColors.primary,
+                    content: Text("Sync Data Success")
+                  )
                  );
                 } 
               );

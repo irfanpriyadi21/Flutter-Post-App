@@ -1,8 +1,11 @@
+import 'package:intl/intl.dart';
 import 'package:mobile_pos_app/data/models/response/product_response_model.dart';
 import 'package:sqflite/sqflite.dart';
 
 class ProductLocalDatasource {
   ProductLocalDatasource._init();
+  DateFormat s = DateFormat("yyyy-MM-dd HH:mm:ss");
+
 
   static final ProductLocalDatasource instance = ProductLocalDatasource._init();
 
@@ -29,7 +32,9 @@ class ProductLocalDatasource {
             "price INTEGER, " // <- Fixed the error
             "stock INTEGER, "
             "category TEXT, "
-            "image TEXT)"
+            "image TEXT, "
+            "createdAt TEXT, " 
+            "updatedAt TEXT)"
           );
   }
 
@@ -52,5 +57,12 @@ class ProductLocalDatasource {
     for(var product in products){
       await db.insert(tableProducts, product.toJson());
     } 
+  }
+
+  Future<List<Product>> getAllProduct() async{
+    final db = await instance.database;
+    final result = await db.query(tableProducts);
+
+    return result.map((e) => Product.fromJson(e)).toList();
   }
 }

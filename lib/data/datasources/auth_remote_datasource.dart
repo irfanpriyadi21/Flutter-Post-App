@@ -23,7 +23,6 @@ class AuthRemoteDatasource {
     }else{
       return left(response.body);
     }
-
   }
 
   Future<Either<String, String>> logout()async{

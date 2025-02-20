@@ -21,6 +21,7 @@ mixin _$ProductEvent {
     required TResult Function() started,
     required TResult Function() fetch,
     required TResult Function(String category) fetchByCategory,
+    required TResult Function() fetchLocal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$ProductEvent {
     TResult? Function()? started,
     TResult? Function()? fetch,
     TResult? Function(String category)? fetchByCategory,
+    TResult? Function()? fetchLocal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$ProductEvent {
     TResult Function()? started,
     TResult Function()? fetch,
     TResult Function(String category)? fetchByCategory,
+    TResult Function()? fetchLocal,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$ProductEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_Fetch value) fetch,
     required TResult Function(_FetchByCategory value) fetchByCategory,
+    required TResult Function(_FetchLocal value) fetchLocal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$ProductEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_Fetch value)? fetch,
     TResult? Function(_FetchByCategory value)? fetchByCategory,
+    TResult? Function(_FetchLocal value)? fetchLocal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$ProductEvent {
     TResult Function(_Started value)? started,
     TResult Function(_Fetch value)? fetch,
     TResult Function(_FetchByCategory value)? fetchByCategory,
+    TResult Function(_FetchLocal value)? fetchLocal,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -133,6 +139,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     required TResult Function() started,
     required TResult Function() fetch,
     required TResult Function(String category) fetchByCategory,
+    required TResult Function() fetchLocal,
   }) {
     return started();
   }
@@ -143,6 +150,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function()? started,
     TResult? Function()? fetch,
     TResult? Function(String category)? fetchByCategory,
+    TResult? Function()? fetchLocal,
   }) {
     return started?.call();
   }
@@ -153,6 +161,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function()? started,
     TResult Function()? fetch,
     TResult Function(String category)? fetchByCategory,
+    TResult Function()? fetchLocal,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -167,6 +176,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_Fetch value) fetch,
     required TResult Function(_FetchByCategory value) fetchByCategory,
+    required TResult Function(_FetchLocal value) fetchLocal,
   }) {
     return started(this);
   }
@@ -177,6 +187,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(_Fetch value)? fetch,
     TResult? Function(_FetchByCategory value)? fetchByCategory,
+    TResult? Function(_FetchLocal value)? fetchLocal,
   }) {
     return started?.call(this);
   }
@@ -187,6 +198,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_Fetch value)? fetch,
     TResult Function(_FetchByCategory value)? fetchByCategory,
+    TResult Function(_FetchLocal value)? fetchLocal,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -250,6 +262,7 @@ class _$FetchImpl with DiagnosticableTreeMixin implements _Fetch {
     required TResult Function() started,
     required TResult Function() fetch,
     required TResult Function(String category) fetchByCategory,
+    required TResult Function() fetchLocal,
   }) {
     return fetch();
   }
@@ -260,6 +273,7 @@ class _$FetchImpl with DiagnosticableTreeMixin implements _Fetch {
     TResult? Function()? started,
     TResult? Function()? fetch,
     TResult? Function(String category)? fetchByCategory,
+    TResult? Function()? fetchLocal,
   }) {
     return fetch?.call();
   }
@@ -270,6 +284,7 @@ class _$FetchImpl with DiagnosticableTreeMixin implements _Fetch {
     TResult Function()? started,
     TResult Function()? fetch,
     TResult Function(String category)? fetchByCategory,
+    TResult Function()? fetchLocal,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -284,6 +299,7 @@ class _$FetchImpl with DiagnosticableTreeMixin implements _Fetch {
     required TResult Function(_Started value) started,
     required TResult Function(_Fetch value) fetch,
     required TResult Function(_FetchByCategory value) fetchByCategory,
+    required TResult Function(_FetchLocal value) fetchLocal,
   }) {
     return fetch(this);
   }
@@ -294,6 +310,7 @@ class _$FetchImpl with DiagnosticableTreeMixin implements _Fetch {
     TResult? Function(_Started value)? started,
     TResult? Function(_Fetch value)? fetch,
     TResult? Function(_FetchByCategory value)? fetchByCategory,
+    TResult? Function(_FetchLocal value)? fetchLocal,
   }) {
     return fetch?.call(this);
   }
@@ -304,6 +321,7 @@ class _$FetchImpl with DiagnosticableTreeMixin implements _Fetch {
     TResult Function(_Started value)? started,
     TResult Function(_Fetch value)? fetch,
     TResult Function(_FetchByCategory value)? fetchByCategory,
+    TResult Function(_FetchLocal value)? fetchLocal,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -400,6 +418,7 @@ class _$FetchByCategoryImpl
     required TResult Function() started,
     required TResult Function() fetch,
     required TResult Function(String category) fetchByCategory,
+    required TResult Function() fetchLocal,
   }) {
     return fetchByCategory(category);
   }
@@ -410,6 +429,7 @@ class _$FetchByCategoryImpl
     TResult? Function()? started,
     TResult? Function()? fetch,
     TResult? Function(String category)? fetchByCategory,
+    TResult? Function()? fetchLocal,
   }) {
     return fetchByCategory?.call(category);
   }
@@ -420,6 +440,7 @@ class _$FetchByCategoryImpl
     TResult Function()? started,
     TResult Function()? fetch,
     TResult Function(String category)? fetchByCategory,
+    TResult Function()? fetchLocal,
     required TResult orElse(),
   }) {
     if (fetchByCategory != null) {
@@ -434,6 +455,7 @@ class _$FetchByCategoryImpl
     required TResult Function(_Started value) started,
     required TResult Function(_Fetch value) fetch,
     required TResult Function(_FetchByCategory value) fetchByCategory,
+    required TResult Function(_FetchLocal value) fetchLocal,
   }) {
     return fetchByCategory(this);
   }
@@ -444,6 +466,7 @@ class _$FetchByCategoryImpl
     TResult? Function(_Started value)? started,
     TResult? Function(_Fetch value)? fetch,
     TResult? Function(_FetchByCategory value)? fetchByCategory,
+    TResult? Function(_FetchLocal value)? fetchLocal,
   }) {
     return fetchByCategory?.call(this);
   }
@@ -454,6 +477,7 @@ class _$FetchByCategoryImpl
     TResult Function(_Started value)? started,
     TResult Function(_Fetch value)? fetch,
     TResult Function(_FetchByCategory value)? fetchByCategory,
+    TResult Function(_FetchLocal value)? fetchLocal,
     required TResult orElse(),
   }) {
     if (fetchByCategory != null) {
@@ -473,6 +497,129 @@ abstract class _FetchByCategory implements ProductEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FetchByCategoryImplCopyWith<_$FetchByCategoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FetchLocalImplCopyWith<$Res> {
+  factory _$$FetchLocalImplCopyWith(
+          _$FetchLocalImpl value, $Res Function(_$FetchLocalImpl) then) =
+      __$$FetchLocalImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FetchLocalImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$FetchLocalImpl>
+    implements _$$FetchLocalImplCopyWith<$Res> {
+  __$$FetchLocalImplCopyWithImpl(
+      _$FetchLocalImpl _value, $Res Function(_$FetchLocalImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$FetchLocalImpl with DiagnosticableTreeMixin implements _FetchLocal {
+  const _$FetchLocalImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ProductEvent.fetchLocal()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'ProductEvent.fetchLocal'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$FetchLocalImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() fetch,
+    required TResult Function(String category) fetchByCategory,
+    required TResult Function() fetchLocal,
+  }) {
+    return fetchLocal();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? fetch,
+    TResult? Function(String category)? fetchByCategory,
+    TResult? Function()? fetchLocal,
+  }) {
+    return fetchLocal?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? fetch,
+    TResult Function(String category)? fetchByCategory,
+    TResult Function()? fetchLocal,
+    required TResult orElse(),
+  }) {
+    if (fetchLocal != null) {
+      return fetchLocal();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Fetch value) fetch,
+    required TResult Function(_FetchByCategory value) fetchByCategory,
+    required TResult Function(_FetchLocal value) fetchLocal,
+  }) {
+    return fetchLocal(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_Fetch value)? fetch,
+    TResult? Function(_FetchByCategory value)? fetchByCategory,
+    TResult? Function(_FetchLocal value)? fetchLocal,
+  }) {
+    return fetchLocal?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Fetch value)? fetch,
+    TResult Function(_FetchByCategory value)? fetchByCategory,
+    TResult Function(_FetchLocal value)? fetchLocal,
+    required TResult orElse(),
+  }) {
+    if (fetchLocal != null) {
+      return fetchLocal(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FetchLocal implements ProductEvent {
+  const factory _FetchLocal() = _$FetchLocalImpl;
 }
 
 /// @nodoc

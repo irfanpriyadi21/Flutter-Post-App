@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:mobile_pos_app/data/datasources/product_local_datasource.dart';
 import 'package:mobile_pos_app/data/datasources/product_remote_datasource.dart';
 import 'package:mobile_pos_app/data/models/response/product_response_model.dart';
 
@@ -25,6 +26,12 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
           emit(ProductState.success(r.data));
         }
       );
+    });
+
+    on<_FetchLocal>((event, emit)async{
+      emit(const ProductState.loading());
+      final product = await ProductLocalDatasource.instance.getAllProduct();
+      emit(ProductState.success(product));
     });
 
     on<_FetchByCategory>((event, emit)async{
